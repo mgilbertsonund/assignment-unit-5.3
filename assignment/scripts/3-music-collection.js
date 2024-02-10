@@ -9,11 +9,23 @@ function addToCollection(collection, title, artist, yearPublished) {
     artist: artist,
     yearPublished: yearPublished
   }; 
-  myCollection.push(newMusicInfo);
+  collection.push(newMusicInfo);
   return newMusicInfo;
 }
 
+// function showCollection(collection) {
+//   for(let music of collection) {
+//     console.log(`${title} by ${artist}, published in ${yearPublished}`);
+//   }
+// }
 
+addToCollection(myCollection, "Slippery When Wet", "Bon Jovi", 1986);
+addToCollection(myCollection, "Take Care", "Drake", 2011);
+addToCollection(myCollection, "The Band CAMINO", "The Band Camino", 2021);
+addToCollection(myCollection, "Traveller", "Chris Stapleton", 2015);
+addToCollection(myCollection, "ASTROWORLD", "Travis Scott", 2018);
+addToCollection(myCollection, "X", "Ed Sheeren", 2014);
+console.log(myCollection);
 
 
 
