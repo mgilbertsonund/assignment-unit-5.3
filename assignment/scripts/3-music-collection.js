@@ -1,18 +1,22 @@
 console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
 
+// empty collection array
 let myCollection = [];
 
+// function to add music details to myCollection and makes it an object newMusicInfo
 function addToCollection(collection, title, artist, yearPublished) {
   const newMusicInfo = {
     title: title,
     artist: artist,
     yearPublished: yearPublished
   }; 
+  // pushes into myCollection array
   collection.push(newMusicInfo);
   return newMusicInfo;
 }
 
+// loops through and displays info about myCollection
 function showCollection(collection) {
   for(let music of collection) {
     console.log(music.title + ' by ' + music.artist + ', published in ' + music.yearPublished);
@@ -25,9 +29,35 @@ addToCollection(myCollection, "The Band CAMINO", "The Band Camino", 2021);
 addToCollection(myCollection, "Traveller", "Chris Stapleton", 2015);
 addToCollection(myCollection, "ASTROWORLD", "Travis Scott", 2018);
 addToCollection(myCollection, "X", "Ed Sheeren", 2014);
+addToCollection(myCollection, "Views", "Drake", 2016);
+addToCollection(myCollection, "-", "Ed Sheeren", 2023);
 console.log(myCollection);
 
 showCollection(myCollection);
+
+// This function works but does not pass the automated test???????????????
+// takes in a collection and artist
+// set an element equal to the index
+// if statement using dot notation to identify matches in the artist passed in and element.artist
+// push into artistMatch array if found, or else returns empty string
+function findByArtist(collection, artist) {
+  let artistMatch = [];
+  for(let i = 0; i < collection.length; i++) {
+    let element = collection[i];
+    if(artist === element.artist) {
+      artistMatch.push(element.title);
+      // console.log('found match');
+    } 
+    // else {
+    //   console.log('Artist is not in collection');
+    // }
+  }
+  return artistMatch;
+}
+
+console.log(findByArtist(myCollection, 'Drake'));
+console.log(findByArtist(myCollection, 'Linkin Park'));
+console.log(findByArtist(myCollection, 'Ed Sheeren'));
 
 
 
