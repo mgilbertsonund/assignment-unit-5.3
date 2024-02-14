@@ -35,7 +35,6 @@ console.log(myCollection);
 
 showCollection(myCollection);
 
-// This function works but does not pass the automated test???????????????
 // takes in a collection and artist
 // set an element equal to the index
 // if statement using dot notation to identify matches in the artist passed in and element.artist
@@ -45,7 +44,7 @@ function findByArtist(collection, artist) {
   for(let i = 0; i < collection.length; i++) {
     let element = collection[i];
     if(artist === element.artist) {
-      artistMatch.push(element.title);
+      artistMatch.push(collection[i]);
       // console.log('found match');
     } 
     // else {
@@ -58,6 +57,20 @@ function findByArtist(collection, artist) {
 console.log(findByArtist(myCollection, 'Drake'));
 console.log(findByArtist(myCollection, 'Linkin Park'));
 console.log(findByArtist(myCollection, 'Ed Sheeren'));
+
+
+//stretch goals
+
+function search(collection, searchCriteria) {
+  for(let i = 0; i < collection.length; i++) {
+    if(searchCriteria.artist === '' || searchCriteria.yearPublished <= 0) {
+      return collection[i].title;
+      continue;
+    }
+  }
+}
+console.log(search(myCollection, { artist: '', yearPublished: 0}));
+console.log(search(myCollection, { artist: 'The Band Camino', yearPublished: 2021 }));
 
 
 
